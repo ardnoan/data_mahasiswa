@@ -4,7 +4,7 @@ if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
 }
-require 'koneksi.php';
+require '../koneksi.php';
 $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
 ?>
 <!DOCTYPE html>
@@ -13,14 +13,14 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistem Manajemen Data Mahasiswa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="navbar">
             <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
-                <a href="logout.php">Logout</a>
+                <a href="../logout.php">Logout</a>
             </div>
         </div>
         
@@ -70,8 +70,8 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
                     <td><?= htmlspecialchars($row['jurusan']) ?></td>
                     <td><?= htmlspecialchars($row['angkatan']) ?></td>
                     <td style="display: flex; justify-content: center; gap: 5px;">
-                        <a href="edit.php?id=<?= $row['id'] ?>" class="btn">Edit</a>
-                        <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                        <a href="../crud/edit.php?id=<?= $row['id'] ?>" class="btn">Edit</a>
+                        <a href="../crud/hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                     </td>
                 </tr>
                 <?php 
@@ -85,5 +85,6 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
             </tbody>
         </table>
     </div>
+    <form action="proses/proses_login.php" method="post">
 </body>
 </html>

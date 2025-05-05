@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'koneksi.php';
+require '../koneksi.php';
 
 // Cek jika form kosong
 if (empty($_POST['username']) || empty($_POST['password'])) {

@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])) {
     exit;
 }
 
-require 'koneksi.php';
+require '../koneksi.php';
 
 // Validasi id
 if (!isset($_GET['id']) || empty($_GET['id'])) {

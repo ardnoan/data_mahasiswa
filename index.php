@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['login'])) {
-    header("Location: dashboard.php");
+    header("Location: views/dashboard.php");
     exit;
 }
 ?>
@@ -18,8 +18,8 @@ if (isset($_SESSION['login'])) {
         <div class="navbar">
             <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
-                <a href="login.php">Login</a>
-                <a href="register.php">Register</a>
+                <a href="views/login.php">Login</a>
+                <a href="views/register.php">Register</a>
             </div>
         </div>
         

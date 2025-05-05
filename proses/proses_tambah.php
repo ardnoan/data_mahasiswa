@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])) {
     exit;
 }
 
-require 'koneksi.php';
+require '../koneksi.php';
 
 // Cek jika form kosong
 if (empty($_POST['nama']) || empty($_POST['nim']) || empty($_POST['jurusan']) || empty($_POST['angkatan'])) {
