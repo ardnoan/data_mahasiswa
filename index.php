@@ -23,12 +23,8 @@ if (isset($_SESSION['login'])) {
             </div>
         </div>
         
-        <h2>Selamat Datang di Aplikasi Manajemen Data Mahasiswa</h2>
-        <p>Silahkan login untuk mengakses sistem manajemen data mahasiswa atau register jika belum memiliki akun.</p>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="login.php" class="btn">Login</a>
-            <a href="register.php" class="btn" style="margin-left: 20px;">Register</a>
+        <div style="text-align: center; margin-top: 40px; text-transform: none; font-size: 12px;">
+            <h2>Silahkan login untuk mengakses sistem manajemen data mahasiswa atau register jika belum memiliki akun.</h2>
         </div>
     </div>
 </body>
