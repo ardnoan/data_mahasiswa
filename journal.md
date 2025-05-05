@@ -530,7 +530,54 @@ Proses deployment aplikasi ke server produksi mencakup beberapa langkah:
 
 ### 7.1 Kesimpulan
 
-Penelitian ini berhasil mengembangkan aplikasi web manajemen data mahasiswa menggunakan PHP dan MySQL. Beberapa kesimpulan yang dapat diambil:
+Penelitian ini berhasil mengembangkan aplikasi web manajemen data mahasiswa menggunakan PHP dan MySQL. Beberapa kesimpulan yang dapat diambil dari penelitian ini adalah sebagai berikut:
 
-1. **Efektivitas PHP dan MySQL**:
-   - Kombinasi PHP dan MySQL terbuk
+#### Efektivitas PHP dan MySQL
+- Kombinasi PHP dan MySQL terbukti efektif dalam membangun aplikasi web manajemen data dengan fitur CRUD yang lengkap.
+- PHP memberikan fleksibilitas dalam pengembangan backend dengan kemudahan integrasi ke berbagai komponen web.
+- MySQL menyediakan penyimpanan data yang terstruktur, efisien, dan dapat diandalkan untuk aplikasi skala menengah.
+
+#### Keamanan Aplikasi
+- Implementasi mekanisme keamanan seperti password hashing, sanitasi input, dan validasi dapat melindungi aplikasi dari ancaman umum seperti SQL Injection dan XSS.
+- Manajemen session yang baik meningkatkan keamanan akses ke aplikasi.
+
+#### Antarmuka Pengguna
+- Desain antarmuka sederhana namun fungsional memudahkan pengguna dalam mengelola data mahasiswa.
+- Pendekatan responsif memungkinkan aplikasi diakses dari berbagai perangkat.
+
+#### Performa Aplikasi
+- Struktur database yang optimal dengan penggunaan indeks meningkatkan kecepatan akses data.
+- Teknik optimasi seperti caching dan minifikasi menghasilkan performa aplikasi yang lebih baik.
+
+Secara keseluruhan, pengembangan aplikasi web manajemen data mahasiswa dengan PHP dan MySQL memberikan solusi yang efektif, aman, dan efisien untuk kebutuhan administratif di lingkungan pendidikan.
+
+### 7.2 Saran Pengembangan
+
+Untuk pengembangan aplikasi web manajemen data mahasiswa di masa depan, beberapa saran yang dapat dipertimbangkan adalah sebagai berikut:
+
+#### Arsitektur Aplikasi
+- Mengadopsi arsitektur MVC (Model-View-Controller) untuk memisahkan logika bisnis, tampilan, dan akses data secara lebih terstruktur.
+- Menggunakan framework PHP seperti Laravel atau CodeIgniter untuk mempercepat pengembangan dan meningkatkan keamanan.
+
+#### Peningkatan Keamanan
+- Mengimplementasikan autentikasi multi-faktor untuk meningkatkan keamanan akses.
+- Menerapkan pembatasan rate-limit untuk mencegah brute force attack.
+- Menggunakan prepared statements secara konsisten untuk semua operasi database.
+
+#### Perluasan Fitur
+- Menambahkan fitur pencarian dan filter data mahasiswa yang lebih canggih.
+- Mengimplementasikan fitur ekspor data ke format CSV atau PDF.
+- Menambahkan dashboard analitik untuk visualisasi data mahasiswa.
+- Mengembangkan sistem notifikasi untuk aktivitas penting dalam sistem.
+
+#### Pengalaman Pengguna
+- Meningkatkan antarmuka pengguna dengan framework front-end seperti Bootstrap atau Tailwind CSS.
+- Menerapkan validasi form sisi klien yang lebih responsif menggunakan JavaScript modern.
+- Mengimplementasikan AJAX untuk pembaruan data tanpa refresh halaman.
+
+#### Skalabilitas dan Performa
+- Menerapkan teknik caching yang lebih canggih seperti Redis atau Memcached.
+- Mengoptimalkan kueri database untuk menangani volume data yang lebih besar.
+- Mempersiapkan infrastruktur untuk mendukung peningkatan jumlah pengguna.
+
+Dengan mengimplementasikan saran-saran di atas, diharapkan aplikasi web manajemen data mahasiswa dapat berkembang menjadi sistem yang lebih andal, aman, dan berfitur lengkap untuk mendukung kebutuhan administrasi pendidikan yang semakin kompleks.
