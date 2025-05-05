@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
+    header("Location: ../views/login.php");
     exit;
 }
 
@@ -9,7 +9,7 @@ require '../koneksi.php';
 
 // Cek jika form kosong
 if (empty($_POST['nama']) || empty($_POST['nim']) || empty($_POST['jurusan']) || empty($_POST['angkatan'])) {
-    header("Location: tambah.php?error=empty");
+    header("Location: ../views/tambah.php?error=empty");
     exit;
 }
 
@@ -21,7 +21,7 @@ $angkatan = mysqli_real_escape_string($conn, $_POST['angkatan']);
 // Cek apakah NIM sudah ada
 $check = mysqli_query($conn, "SELECT * FROM mahasiswa WHERE nim = '$nim'");
 if (mysqli_num_rows($check) > 0) {
-    header("Location: tambah.php?error=nim");
+    header("Location: ../views/tambah.php?error=nim");
     exit;
 }
 
@@ -29,10 +29,10 @@ if (mysqli_num_rows($check) > 0) {
 $query = "INSERT INTO mahasiswa (nama, nim, jurusan, angkatan) VALUES ('$nama', '$nim', '$jurusan', '$angkatan')";
 if (mysqli_query($conn, $query)) {
     // Data berhasil ditambahkan
-    header("Location: dashboard.php?status=success&action=add");
+    header("Location: ../views/dashboard.php?status=success&action=add");
     exit;
 } else {
     // Error
-    header("Location: tambah.php?error=db");
+    header("Location: ../views/tambah.php?error=db");
     exit;
 }

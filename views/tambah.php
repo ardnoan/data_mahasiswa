@@ -39,7 +39,7 @@ if (!isset($_SESSION['login'])) {
             </div>
         <?php } ?>
         
-        <form action="proses_tambah.php" method="post">
+        <form action="../proses/proses_tambah.php" method="post">
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" id="nama" name="nama" required>

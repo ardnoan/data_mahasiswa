@@ -38,7 +38,7 @@ $row = mysqli_fetch_assoc($data);
             <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
                 <a href="dashboard.php">Dashboard</a>
-                <a href="logout.php">Logout</a>
+                <a href="../logout.php">Logout</a>
             </div>
         </div>
         
@@ -58,7 +58,7 @@ $row = mysqli_fetch_assoc($data);
             </div>
         <?php } ?>
         
-        <form action="proses_edit.php" method="post">
+        <form action="../proses/proses_edit.php" method="post">
             <input type="hidden" name="id" value="<?= $row['id'] ?>">
             
             <div class="form-group">

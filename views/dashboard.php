@@ -70,8 +70,8 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
                     <td><?= htmlspecialchars($row['jurusan']) ?></td>
                     <td><?= htmlspecialchars($row['angkatan']) ?></td>
                     <td style="display: flex; justify-content: center; gap: 5px;">
-                        <a href="../crud/edit.php?id=<?= $row['id'] ?>" class="btn">Edit</a>
-                        <a href="../crud/hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                        <a href="edit.php?id=<?= $row['id'] ?>" class="btn">Edit</a>
+                        <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                     </td>
                 </tr>
                 <?php 
@@ -85,6 +85,5 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
             </tbody>
         </table>
     </div>
-    <form action="proses/proses_login.php" method="post">
 </body>
 </html>

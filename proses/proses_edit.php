@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
+    header("Location: ../views/login.php");
     exit;
 }
 
@@ -9,7 +9,7 @@ require '../koneksi.php';
 
 // Cek jika form kosong
 if (empty($_POST['id']) || empty($_POST['nama']) || empty($_POST['nim']) || empty($_POST['jurusan']) || empty($_POST['angkatan'])) {
-    header("Location: edit.php?id={$_POST['id']}&error=empty");
+    header("Location: ../views/edit.php?id={$_POST['id']}&error=empty");
     exit;
 }
 
@@ -22,7 +22,7 @@ $angkatan = mysqli_real_escape_string($conn, $_POST['angkatan']);
 // Cek apakah NIM sudah digunakan oleh mahasiswa lain
 $check = mysqli_query($conn, "SELECT * FROM mahasiswa WHERE nim = '$nim' AND id != $id");
 if (mysqli_num_rows($check) > 0) {
-    header("Location: edit.php?id=$id&error=nim");
+    header("Location: ../views/edit.php?id=$id&error=nim");
     exit;
 }
 
@@ -30,10 +30,10 @@ if (mysqli_num_rows($check) > 0) {
 $query = "UPDATE mahasiswa SET nama='$nama', nim='$nim', jurusan='$jurusan', angkatan='$angkatan' WHERE id=$id";
 if (mysqli_query($conn, $query)) {
     // Data berhasil diupdate
-    header("Location: dashboard.php?status=success&action=edit");
+    header("Location: ../views/dashboard.php?status=success&action=edit");
     exit;
 } else {
     // Error
-    header("Location: edit.php?id=$id&error=db");
+    header("Location: ../views/edit.php?id=$id&error=db");
     exit;
 }

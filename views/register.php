@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['login'])) {
-    header("Location: views/dashboard.php");
+    header("Location: dashboard.php");
     exit;
 }
 ?>
@@ -19,7 +19,7 @@ if (isset($_SESSION['login'])) {
             <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
                 <a href="../index.php">Home</a>
-                <a href="views/login.php">Login</a>
+                <a href="login.php">Login</a>
             </div>
         </div>
         
@@ -34,6 +34,8 @@ if (isset($_SESSION['login'])) {
                         echo "Username sudah digunakan!";
                     } elseif ($_GET['error'] == 'password') {
                         echo "Password minimal 6 karakter!";
+                    } elseif ($_GET['error'] == 'match') {
+                        echo "Password dan konfirmasi password tidak sama!";
                     } else {
                         echo "Terjadi kesalahan, silahkan coba lagi.";
                     }
@@ -41,7 +43,7 @@ if (isset($_SESSION['login'])) {
             </div>
         <?php } ?>
         
-        <form action="proses/proses_register.php" method="post">
+        <form action="../proses/proses_register.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
