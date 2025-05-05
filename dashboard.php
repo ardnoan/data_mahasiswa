@@ -18,9 +18,8 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
 <body>
     <div class="container">
         <div class="navbar">
-            <div class="logo">SIAKAD</div>
+            <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
-                <a href="tambah.php">Tambah Mahasiswa</a>
                 <a href="logout.php">Logout</a>
             </div>
         </div>
@@ -43,7 +42,7 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
             </div>
         <?php } ?>
         
-        <div style="margin: 20px 0;">
+        <div style="margin: 20px 0; display: flex; justify-content: flex-end;">
             <a href="tambah.php" class="btn">+ Tambah Mahasiswa</a>
         </div>
         
@@ -55,7 +54,7 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
                     <th>NIM</th>
                     <th>Jurusan</th>
                     <th>Angkatan</th>
-                    <th>Aksi</th>
+                    <th style="text-align: center;">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,7 +69,7 @@ $data = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
                     <td><?= htmlspecialchars($row['nim']) ?></td>
                     <td><?= htmlspecialchars($row['jurusan']) ?></td>
                     <td><?= htmlspecialchars($row['angkatan']) ?></td>
-                    <td>
+                    <td style="display: flex; justify-content: center; gap: 5px;">
                         <a href="edit.php?id=<?= $row['id'] ?>" class="btn">Edit</a>
                         <a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                     </td>

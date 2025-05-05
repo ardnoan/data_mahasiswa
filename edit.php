@@ -35,7 +35,7 @@ $row = mysqli_fetch_assoc($data);
 <body>
     <div class="container">
         <div class="navbar">
-            <div class="logo">SIAKAD</div>
+            <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
                 <a href="dashboard.php">Dashboard</a>
                 <a href="logout.php">Logout</a>

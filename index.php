@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])) {
 <body>
     <div class="container">
         <div class="navbar">
-            <div class="logo">SIAKAD</div>
+            <div class="logo">Sistem Manajemen Data Mahasiswa</div>
             <div class="nav-links">
                 <a href="login.php">Login</a>
                 <a href="register.php">Register</a>
